@@ -206,12 +206,13 @@ const styles = StyleSheet.create({
     color: globalStyles.color.braveOrange,
     cursor: 'pointer',
     margin: '0',
+
     ':hover': {
       color: '#000'
     }
   },
 
-  linkTextSmall: {
+  linkText_small: {
     fontSize: '14px'
   }
 })

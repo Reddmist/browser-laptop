@@ -41,12 +41,12 @@ class ExtensionItem extends ImmutableComponent {
     return this.props.extension.getIn(['manifest', 'background', 'page']) || '_generated_background_page.html'
   }
   onInspect () {
-    const extensionId = this.props.extension.get('id')
+    const url = this.props.extension.get('url')
     const backgroundPage = this.backgroundPage
     chrome.tabs.query(
       {currentWindow: true, active: true},
       function (tabArray) {
-        appActions.loadURLRequested(tabArray[0].id, 'chrome-extension://' + extensionId + '/' + backgroundPage)
+        appActions.loadURLRequested(tabArray[0].id, url + backgroundPage)
       }
     )
   }
